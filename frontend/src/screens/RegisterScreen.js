@@ -41,6 +41,7 @@ function RegisterScreen({location, history}) {
   return (
     <FormContainer>
         <h1>Sign In</h1>
+        { message && <Message variant='danger'>{error}</Message>}
         { error && <Message variant='danger'>{message}</Message> }
         { loading && <Loader />}
         <Form onSubmit={submitHandler}>
@@ -60,7 +61,7 @@ function RegisterScreen({location, history}) {
               type='name'
               placeholder='Enter name'
               value= {email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             ></Form.control>
           </Form.Group>
 
